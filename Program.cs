@@ -78,13 +78,28 @@ namespace _20200140009_Tugas2_B
                     + "insert into Faktur Supply (Nomor,Tanggal,ID_Pegawai,ID_Supplier,ID_Obat,Jumlah_Obat,Total,Pajak,Total_Bayar)values('055,'20 Maret 2022',234567','21567','00567','10 Dus','Rp.1000','Rp.500.000',) "
                     + "insert into Faktur Supply (Nomor,Tanggal,ID_Pegawai,ID_Supplier,ID_Obat,Jumlah_Obat,Total,Pajak,Total_Bayar)values('055,'5 juli 2022',234567','21567','00567','6 Dus','Rp.1000','Rp.50.000',) "
                     + "insert into Faktur Supply (Nomor,Tanggal,ID_Pegawai,ID_Supplier,ID_Obat,Jumlah_Obat,Total,Pajak,Total_Bayar)values('055,'4 januari 2022',234567','21567','00567','20 Dus','Rp.1000','Rp.200.000',))", conc);
-                
+                cm.ExecuteNonQuery();
+
+                Console.WriteLine("sukses menambahkan data");
+                Console.ReadKey();
+
 
 
 
 
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("sepertinya tabel kamu gagal : (" + e);
+                Console.ReadKey();
+            }
+            finally
+            {
+                conc.Close();
+            }
         }
+
+    
 
         static void Main(string[] args)
         {
