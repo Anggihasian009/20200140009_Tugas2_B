@@ -103,7 +103,8 @@ namespace _20200140009_Tugas2_B
 
         static void Main(string[] args)
         {
-
+            new Program().CreatTable();
+            new Program().InsertData();
 
         }
     }
