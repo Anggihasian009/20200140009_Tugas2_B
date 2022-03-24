@@ -20,7 +20,7 @@ namespace _20200140009_Tugas2_B
                 con.Open();
 
                 SqlCommand cm = new SqlCommand("Creat table Pegawai(ID_pegawai char (10) not null primary key ,Nama varchar (30) not null,Alamat Varchar (50),Kota Varchar (50),Status Varchar (15),Nomor_Hp char (12))"
-                    + "Creat table Obat(ID_Obat char (10) not null primary key ,Nama_Obat Varchar (20),Jenis Varchar (20),Harga Varchar  (15),Stock varchar (10),ID_Supplier Char (10))"
+                    + "Creat table Obat(ID_Obat char (10) not null primary key ,ID_Pelanggan char (10) not null foreign key,Nama_Obat Varchar (20),Jenis Varchar (20),Harga Varchar  (15),Stock varchar (10),ID_Supplier Char (10))"
                     + "Create table Pelanggan(ID_Pelanggan char (10) not null primary key,Nama varchar (30),Alamat Varchar (50),Jenis_Kelamin char (10),Pekerjaan Varchar(15))"
                     + "Create table Supplier(ID_Supplier cahr (10) not null primary key,Nama varchar (30),Alamat varchar (50),Kota Varchar (50),Nomor_Hp char (12))"
                     + "Create table Faktur Penjualan(Nomor char (15) not null Primary key,Tanggal Date,ID_Pelanggan char (10) not null Foreign,ID_Pegawai char (10) not null Foreign,ID_Obat char (10) not null Foreign key,jumlah Obat Varchar (15),total Varchar (15),pajak Varchar (20),Total_Bayar Varchar (20))"
@@ -39,13 +39,20 @@ namespace _20200140009_Tugas2_B
                 con.Close();
             }
 
+        }
+        public void InsertData()
+        {
+            SqlConnection conc = null;
+            try
+            {
+                conc = new SqlConnection("data source=ANGGIMUNTHE;database=Anggi;Integrated Security =TRUE");
+                conc.Open();
 
-            
+                SqlCommand cm = new SqlCommand("insert into Pegawai(ID_Pegawai,Nama,Alamat,Kota,status,Nomor_Hp)values('234567',Anggi Hasian',Medan',Rantauprapat',Mahasiswa',0813966222306')"
+                    + "insert into Pegawai(ID_Pegawai,Nama,Alamat,Kota,status,Nomor_Hp)values('234567',Nugraha',Pancing ',Labura',Pelajar',0858966222306')"
+                    + "insert into Pegawai(ID_Pegawai,Nama,Alamat,Kota,status,Nomor_Hp)values('234567',joko',Jateng',Magelang',Buru tani ',0913966222306')"
 
-            
-            
-
-
+            }
         }
 
         static void Main(string[] args)
